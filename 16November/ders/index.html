@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function counterCr(num) {
+        let number = num;
+
+        return function counter() {
+          number++;
+          console.log(number);
+         
+          return function mult(n) {
+            res = number * n;
+            console.log(res);
+            return res;
+          };
+        };
+      }
+      const newCounter = counterCr(10); // cr
+      newCounter()
+      newCounter()
+      newCounter()
+      const newMult = newCounter(); //
+      const newMult1 = newMult(3);
+      newCounter()
+      newCounter()
+      newCounter()
+      newCounter()
+      console.log(newMult1);
+
+
+    </script>
+  </body>
+</html>
